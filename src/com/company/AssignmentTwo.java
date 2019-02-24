@@ -10,12 +10,13 @@ public class AssignmentTwo {
         int num = - 1;
         if (twoDim != null) {
             num = 0;
-            for (int i = 0; i < twoDim.length; i++) {
-                if (twoDim[i] != null) {
-                    num += twoDim[i].length;
+            for (int[] x: twoDim) {
+                if (x != null) {
+                    num += x.length;
                 }
             }
         }
         return num;
     }
+
 }
