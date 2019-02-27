@@ -32,21 +32,19 @@ public class AssignmentTwo {
         return num;
     }
 
-    // needs fixing
+    
     public static int[] twoDimensionalToOneDimensional(int[][] arr) {
         int[]tmp = null;
+        int dest_arr = 0;
+
         if (arr != null) {
-            int length = 0;
+            tmp = new int[numElements(arr)];
             for (int i = 0; i < arr.length; i++) {
-                length += numElements(arr);
+                if (arr[i] != null) {
+                    System.arraycopy(arr[i], 0, tmp, dest_arr, arr[i].length);
+                    dest_arr += arr[i].length;
+                }
             }
-
-            tmp = new int[length];
-            for (int i = 0; i < arr.length; i++) {
-                System.arraycopy(arr[i], 0, tmp, 0, arr.length);
-            }
-
-
         }
         return tmp;
     }
