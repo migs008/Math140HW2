@@ -38,11 +38,14 @@ public class AssignmentTwo {
         if (arr != null) {
             int length = 0;
             for (int i = 0; i < arr.length; i++) {
-                length += arr[i].length;
+                length += numElements(arr);
             }
 
             tmp = new int[length];
-            System.arraycopy(arr, 0, length, 0, arr.length);
+            for (int i = 0; i < arr.length; i++) {
+                System.arraycopy(arr[i], 0, tmp, 0, arr.length);
+            }
+
 
         }
         return tmp;
