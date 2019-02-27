@@ -33,11 +33,17 @@ public class AssignmentTwo {
     }
 
     // needs fixing
-    public static int[][] twoDimensionalToOneDimensional(int[][] arr) {
+    public static int[] twoDimensionalToOneDimensional(int[][] arr) {
         int[]tmp = null;
         if (arr != null) {
-            tmp = new int[arr.length];
-            System.arraycopy(arr, 0, tmp, 0, arr.length);
+            int length = 0;
+            for (int i = 0; i < arr.length; i++) {
+                length += arr[i].length;
+            }
+
+            tmp = new int[length];
+            System.arraycopy(arr, 0, length, 0, arr.length);
+
         }
         return tmp;
     }
