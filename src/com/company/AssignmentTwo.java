@@ -31,4 +31,14 @@ public class AssignmentTwo {
         }
         return num;
     }
+
+    // needs fixing
+    public static int[][] twoDimensionalToOneDimensional(int[][] arr) {
+        int[]tmp = null;
+        if (arr != null) {
+            tmp = new int[arr.length];
+            System.arraycopy(arr, 0, tmp, 0, arr.length);
+        }
+        return tmp;
+    }
 }

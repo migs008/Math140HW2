@@ -62,6 +62,27 @@ public class Test {
         System.out.print("Results when all arrays are null: ");
         System.out.println(hwTwo.numElements(arrThree));  // 2177
 
+        System.out.println("\nMethod 3: Test twoDimensionalToOneDimensional: ");
+        arrTwo = null;
+
+        System.out.println("Results when array = null");
+        displayOneDimArr(hwTwo.twoDimensionalToOneDimensional(arrTwo));
+
+        arrTwo = new int[][]{null, null, null, null, null};
+        System.out.println("Results when all rows are null: ");
+        displayOneDimArr(hwTwo.twoDimensionalToOneDimensional(arrTwo));
+
+        arrTwo[1] = new int[]{9, 0, 8, 7};
+        arrTwo[3] = new int[]{-3, 4, 8, 7, 11, 15, 8, 0};
+        System.out.print("Results when some rows are null: ");
+        displayOneDimArr(hwTwo.twoDimensionalToOneDimensional(arrTwo));
+
+        arrTwo[0] = new int[]{1, 2};
+        arrTwo[2] = new int[]{8, 9, 3, 4};
+        arrTwo[4] = new int[]{100, 101, 100};
+        System.out.print("Results when all rows are non-null: ");
+        displayOneDimArr(hwTwo.twoDimensionalToOneDimensional(arrTwo));
+
 
     }
 }
