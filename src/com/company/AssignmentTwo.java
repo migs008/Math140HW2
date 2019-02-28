@@ -93,26 +93,27 @@ public class AssignmentTwo {
     }
 
     /*
-    Purpose: A meaningful description of the method/constructor.
-    Parameters: Describe the purpose of each parameter
-    Return: A description of the return value.
+    Purpose: A static method that removes the largest valued element in an array.
+    Parameters: Takes in[] arr as an argument for an array.
+    Return: The array with its largest valued element removed.
     */
     public static int[] removeLargest(int[] arr) {
         int[] tmp = null;
-        int dest_arr = 0;
         int largestNumber = 0;
-
 
         if (arr != null) {
             for (int i = 0; i < arr.length; i++) {
-                if (arr[i] > arr[largestNumber] && arr.length > 1) {
+                if (arr[i] > arr[largestNumber] && arr.length > 0) {
                     tmp = new int[arr.length - 1];
                     largestNumber = i;
                     System.arraycopy(arr, 0, tmp, 0, largestNumber);
                     System.arraycopy(arr, largestNumber + 1, tmp, largestNumber, arr.length - largestNumber - 1);
                 }
-                else {
-                    tmp = arr;
+                else if (arr[i] == arr[largestNumber] && i == 0) {
+                    tmp = new int[arr.length - 1];
+                    largestNumber = i;
+                    System.arraycopy(arr, 1, tmp, 0, largestNumber);
+                    System.arraycopy(arr, largestNumber + 1, tmp, largestNumber, arr.length - largestNumber - 1);
                 }
             }
         }
