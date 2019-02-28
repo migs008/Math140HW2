@@ -104,6 +104,28 @@ public class Test {
         System.out.println("Results when all arrays are non-null: ");
         displayOneDimArr(hwTwo.threeDimensionalToOneDimensional(arrThree));
 
+        System.out.println("\nMethod 5: Test removeLargest: ");
+        int[] arrFour = null;
+
+        System.out.println("Result when array is null");
+        displayOneDimArr(hwTwo.removeLargest(arrFour));
+
+        arrFour = new int[] {100};
+        System.out.println("Result when array has exactly one value");
+        displayOneDimArr(hwTwo.removeLargest(arrFour));
+
+        arrFour = new int[]{100, 45, 22,  100, 9, 10};
+        System.out.println("Result when largest located at position zero");
+        displayOneDimArr(hwTwo.removeLargest(arrFour));
+
+        arrFour = new int[]{9, 100, 45, 22,  100, 9, 10001};
+        System.out.println("Result when largest located at the last position");
+        displayOneDimArr(hwTwo.removeLargest(arrFour));
+
+        arrFour = new int[]{9, 1, 45, 22,  100, 9, 100,  6, 100, 4, -4, 10};
+        System.out.println("Result when largest located in the middle of the array");
+        displayOneDimArr(hwTwo.removeLargest(arrFour));
+
 
     }
 }
