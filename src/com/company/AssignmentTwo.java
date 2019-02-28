@@ -2,10 +2,6 @@ package com.company;
 
 public class AssignmentTwo {
 
-    public static void main(String[] args) {
-        // write your code here
-    }
-
     public static int numElements(int[][] twoDim) {
         int num = - 1;
         if (twoDim != null) {
@@ -32,7 +28,7 @@ public class AssignmentTwo {
         return num;
     }
 
-    
+
     public static int[] twoDimensionalToOneDimensional(int[][] arr) {
         int[]tmp = null;
         int dest_arr = 0;
@@ -43,6 +39,26 @@ public class AssignmentTwo {
                 if (arr[i] != null) {
                     System.arraycopy(arr[i], 0, tmp, dest_arr, arr[i].length);
                     dest_arr += arr[i].length;
+                }
+            }
+        }
+        return tmp;
+    }
+
+    public static int[] threeDimensionalToOneDimensional(int[][][] arr) {
+        int[] tmp = null;
+        int dest_arr = 0;
+
+        if (arr != null) {
+            tmp = new int[numElements(arr)];
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] != null) {
+                    for (int j = 0; j < arr[i].length; j++) {
+                        if (arr[i][j] != null) {
+                            System.arraycopy(arr[i][j], 0, tmp, dest_arr, arr[i][j].length);
+                            dest_arr += arr[i][j].length;
+                        }
+                    }
                 }
             }
         }
